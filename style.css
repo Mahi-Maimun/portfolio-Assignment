@@ -93,3 +93,17 @@ min-height: 100vh;
     font-size: 1.3rem;
     padding: 1.5rem 62px;
 }
+
+.speaker-content{
+    text-align: center;
+    padding:3rem;
+}
+.speaker-content h1{
+    font-size:3.2rem;
+}
+
+.speaker-person{
+    position: relative;
+    width: 642px;
+    overflow: hidden;
+}
