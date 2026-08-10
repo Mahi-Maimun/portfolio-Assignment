@@ -1,109 +1,354 @@
-/* common styles accross the website */
-*{
-    padding:0;
-    margin:0;
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
     font-family: "Inter", sans-serif;
+    background: #F8FAFC;
+    color: #0F172A;
 }
-.container{
-    max-width: 1200px;
-    margin:auto;
+img {
+    display: block;
+    max-width: 100%;
 }
-.each-section{
-min-height: 100vh;
+button {
+    cursor: pointer;
 }
-.common-btn{
- border:none;
-    background-color: #1D4ED8;
-    padding:0.7rem 25px;
-    color:white;
-    font-weight: bold;
-    border-radius: 7px;
+.container {
+    width: 1200px;
+    margin: 0 auto;
 }
-/* common styles accross the website ends */
-
-
-.navbar{
-    display:flex;
-    justify-content: space-around;
-    padding:1rem 0;
+.section {
+    padding: 5rem 0;
+}
+.text-center {
+    text-align: center;
+}
+.common-btn {
+    border: none;
+    background-color: #2563EB;
+    color: white;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.common-btn:hover {
+    transform: translateY(-2px);
+    background-color: #1E40AF;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+.navbar {
+    display: flex;
     align-items: center;
-
+    justify-content: space-between;
+    padding: 1rem 0;
 }
-.navbar img{
-  width:min-content;
-  height: min-content;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
 }
-.nav-menu-items a{
+.nav-logo {
+    width: 44px;
+    height: 44px;
+}
+.brand-text span,
+.brand-text strong {
+    display: block;
+    line-height: 1;
+}
+.brand-text span {
+    font-size: 0.85rem;
+    color: #475569;
+}
+.brand-text strong {
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+}
+.nav-menu-items {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-menu-items a {
+    color: #475569;
     text-decoration: none;
-    color : #575757FF;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
-.nav-menu-items a:hover{
-    color : black;
+.nav-menu-items a:hover {
+    color: #0F172A;
 }
-.nav-menu-items{
-    display: flex;
-    list-style: none; 
-    gap:24px;
-
+.register-button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.8rem;
+    background: #2563EB;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18);
 }
-
-.register-button{
-    border:none;
-    background-color: #1D4ED8;
-    padding:0.7rem 25px;
-    color:white;
-    font-weight: bold;
-    border-radius: 7px;
+.banner-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 35%, rgba(15, 23, 42, 0.9) 100%), url("./assets/banner.jpg") center/cover no-repeat;
+    display: grid;
+    place-items: center;
+    padding: 6rem 0;
 }
-
-/* banner */
-.banner-section{
-    background-image: url("./assets/banner.jpg");
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.banner-content{
-    display:flex;
-    flex-direction: column;
-    gap:15rem;
-    justify-content: center;
-    align-items: center;
-}
-.banner-head{
-    color:white;
+.banner-content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
     align-items: center;
-
+    gap: 2.5rem;
+    text-align: center;
+    color: white;
 }
-.banner-head h1{
-    font-size:4rem;
+.banner-copy h1 {
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
 }
-.banner-head p{
-    width: 600px;
+.banner-copy h1 i {
+    font-style: normal;
+    font-weight: 800;
+    color: #FFFFFF;
+    opacity: 0.95;
+}
+.banner-copy p {
+    max-width: 760px;
+    color: #E2E8F0;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+.banner-foot {
+    font-size: 1rem;
+    padding: 1rem 2.2rem;
+}
+.speakers-section {
+    background: #fff;
+}
+.speakers-section h2,
+.pricing-section h2 {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 0.9rem;
+}
+.section-subtitle {
+    color: #64748B;
+    margin-bottom: 3rem;
+    font-size: 1rem;
     text-align: center;
 }
-
-.banner-foot{
-    font-size: 1.3rem;
-    padding: 1.5rem 62px;
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
 }
-
-.speaker-content{
-    text-align: center;
-    padding:3rem;
-}
-.speaker-content h1{
-    font-size:3.2rem;
-}
-
-.speaker-person{
-    position: relative;
-    width: 642px;
+.speaker-card {
+    background: white;
+    border-radius: 26px;
     overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.speaker-card:hover {
+    transform: translateY(-6px);
+}
+.speaker-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+.speaker-card-body {
+    padding: 1.5rem;
+}
+.speaker-label {
+    display: inline-block;
+    color: #2563EB;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+}
+.speaker-card-body h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
+}
+.speaker-card-body p {
+    color: #64748B;
+    line-height: 1.75;
+}
+.pricing-section {
+    background: #F8FAFC;
+}
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.plan-card {
+    background: white;
+    border-radius: 26px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.plan-card.featured {
+    background: #0F172A;
+    color: white;
+    border: none;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+}
+.plan-type {
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #2563EB;
+}
+.plan-card.featured .plan-type {
+    color: #93C5FD;
+}
+.plan-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+.plan-price span {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+.plan-price small {
+    color: inherit;
+    opacity: 0.72;
+    font-size: 0.95rem;
+}
+.plan-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    padding: 0;
+    margin: 0;
+    color: #475569;
+}
+.plan-card.featured ul {
+    color: #CBD5E1;
+}
+.plan-card li {
+    line-height: 1.8;
+}
+.plan-button {
+    border: none;
+    border-radius: 999px;
+    padding: 1rem 0;
+    background: #2563EB;
+    color: white;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.plan-button:hover {
+    transform: translateY(-2px);
+    background: #1D4ED8;
+}
+.plan-button.outline {
+    background: transparent;
+    color: #2563EB;
+    border: 1px solid #2563EB;
+}
+.plan-card.featured .plan-button.outline {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+.cta-section {
+    padding: 4rem 0;
+}
+.cta-card {
+    border: 2px dashed rgba(99, 102, 241, 0.35);
+    border-radius: 32px;
+    background: rgba(210, 214, 255, 0.25);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.cta-title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #4F46E5;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+.cta-subtitle {
+    color: #4C1D95;
+    font-size: 1.1rem;
+}
+.info-section {
+    background: white;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+.info-grid article {
+    padding: 2rem;
+    border-radius: 24px;
+    background: #F8FAFC;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+.info-grid h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
+}
+.info-grid p {
+    color: #475569;
+    line-height: 1.8;
+}
+@media (max-width: 960px) {
+    .speakers-grid,
+    .pricing-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu-items {
+        display: none;
+    }
+    .navbar {
+        gap: 1rem;
+    }
+}
+@media (max-width: 640px) {
+    .banner-content {
+        gap: 1.5rem;
+    }
+    .banner-copy h1 {
+        font-size: 2.8rem;
+    }
+    .plan-card {
+        padding: 1.5rem;
+    }
+    .cta-card {
+        padding: 3rem 1.5rem;
+    }
+}
+
+
